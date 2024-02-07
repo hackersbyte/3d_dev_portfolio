@@ -1,4 +1,11 @@
+import aws from './aws.svg'
 import css from './css.svg'
+import cloud_computing from './cloud_computing.svg'
+import django from './django.svg'
+import python from './python.svg'
+import postgresql from './postgresql.svg'
+import flask from './flask.svg'
+import fastapi from './fastapi.svg'
 import express from './express.svg'
 import git from './git.svg'
 import github from './github.svg'
@@ -7,6 +14,7 @@ import javascript from './javascript.svg'
 import mongodb from './mongodb.svg'
 import motion from './motion.svg'
 import mui from './mui.svg'
+import mysql from './mysql.svg'
 import nextjs from './nextjs.svg'
 import nodejs from './nodejs.svg'
 import react from './react.svg'
@@ -28,8 +36,13 @@ import soundon from './soundon.png'
 import soundoff from './soundoff.png'
 
 export {
+    aws,
     css,
+    cloud_computing,
+    django,
     express,
+    flask,
+    fastapi,
     git,
     github,
     html,
@@ -39,6 +52,9 @@ export {
     mui,
     nextjs,
     nodejs,
+    python,
+    postgresql,
+    mysql,
     react,
     redux,
     sass,
