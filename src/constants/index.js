@@ -31,8 +31,35 @@ import {
     summiz,
     tailwindcss,
     threads,
-    typescript
+    typescript,
+    instagram,
+    facebook,
+    thread,
+    twitt,
+    youtube,
+    tiktok,
+    mobile1,
+    creator,
+    backend,
+    web,
 } from "../assets/icons";
+
+export { default as images } from  './images';
+
+export const navLinks = [
+    {
+      id: "about",
+      title: "About",
+    },
+    {
+      id: "work",
+      title: "Work",
+    },
+    {
+      id: "contact",
+      title: "Contact",
+    },
+  ];
 
 export const skills = [
     {
@@ -227,6 +254,36 @@ export const socialLinks = [
         name: 'LinkedIn',
         iconUrl: linkedin,
         link: 'https://www.linkedin.com/in/YourLinkedInUsername',
+    },
+    {
+        name: 'Instagram',
+        iconUrl: instagram,
+        link: 'https://www.instagram.com/in/YourLinkedInUsername',
+    },
+    {
+        name: 'Facebook',
+        iconUrl: facebook,
+        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
+    },
+    {
+        name: 'Threads',
+        iconUrl: thread,
+        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
+    },
+    {
+        name: 'Twitter',
+        iconUrl: twitt,
+        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
+    },
+    {
+        name: 'TikTok',
+        iconUrl: tiktok,
+        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
+    },
+    {
+        name: 'Youtube',
+        iconUrl: youtube,
+        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
     }
 ];
 
@@ -237,6 +294,7 @@ export const projects = [
         name: 'Amazon Price Tracker',
         description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
         link: 'https://github.com/hackersbyte/pricewise',
+        Githublink: 'https://github.com/hackersbyte/pricewise',
     },
     {
         iconUrl: threads,
@@ -244,6 +302,7 @@ export const projects = [
         name: 'Full Stack Threads Clone',
         description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
         link: 'https://github.com/hackersbyte/threads',
+        Githublink: 'https://github.com/hackersbyte/pricewise',
     },
     {
         iconUrl: car,
@@ -251,6 +310,7 @@ export const projects = [
         name: 'Car Finding App',
         description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
         link: 'https://github.com/hackersbyte/project_next13_car_showcase',
+        Githublink: 'https://github.com/hackersbyte/pricewise',
     },
     {
         iconUrl: snapgram,
@@ -258,6 +318,7 @@ export const projects = [
         name: 'Full Stack Instagram Clone',
         description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
         link: 'https://github.com/hackersbyte/social_media_app',
+        Githublink: 'https://github.com/hackersbyte/pricewise',
     },
     {
         iconUrl: estate,
@@ -265,6 +326,7 @@ export const projects = [
         name: 'Real-Estate Application',
         description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
         link: 'https://github.com/hackersbyte/projects_realestate',
+        Githublink: 'https://github.com/hackersbyte/pricewise',
     },
     {
         iconUrl: summiz,
@@ -272,5 +334,93 @@ export const projects = [
         name: 'AI Summarizer Application',
         description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
         link: 'https://github.com/hackersbyte/project_ai_summarizer',
+        Githublink: 'https://github.com/hackersbyte/pricewise',
     }
 ];
+
+
+export const testimonials = [
+    {
+      testimonial:
+        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+      name: "Sara Lee",
+      theme: 'btn-back-yellow',
+      designation: "CFO",
+      company: "Acme Co",
+      image: "https://randomuser.me/api/portraits/women/4.jpg",
+    
+    },
+    {
+        testimonial:
+        "I've never met a web developer who truly cares about their clients' success like Rick does.",
+      name: "Chris Brown",
+      designation: "COO",
+      theme: 'btn-back-yellow',
+      company: "DEF Corp",
+      image: "https://randomuser.me/api/portraits/men/5.jpg",
+      
+    },
+    {
+        testimonial:
+        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+      name: "Lisaa Waang",
+      designation: "CTO",
+      theme: 'btn-back-yellow',
+      company: "456 Enterprises",
+      image: "https://randomuser.me/api/portraits/women/6.jpg",
+      
+    },
+    {
+        testimonial:
+        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+      name: "Lissa Wanng",
+      designation: "CTO",
+      theme: 'btn-back-yellow',
+      company: "456 Enterprises",
+      image: "https://randomuser.me/api/portraits/women/6.jpg",
+      
+    },
+    {
+        testimonial:
+        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+      name: "Lisa Wang",
+      designation: "CTO",
+      theme: 'btn-back-yellow',
+      company: "456 Enterprises",
+      image: "https://randomuser.me/api/portraits/women/6.jpg",
+      
+    },
+    {
+        testimonial:
+        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+      name: "Litsa Wagng",
+      designation: "CTO",
+      theme: 'btn-back-yellow',
+      company: "456 Enterprises",
+      image: "https://randomuser.me/api/portraits/women/6.jpg",
+      
+    },
+  ];
+
+  export const services = [
+    {
+      title: "Web Developer",
+      icon: web,
+    },
+    {
+      title: "React Native Developer",
+      icon: mobile1,
+    },
+    {
+      title: "Backend Developer",
+      icon: backend,
+    },
+    {
+      title: "Python Developer",
+      icon: python,
+    },
+    {
+      title: "Content Creator",
+      icon: creator,
+    },
+  ];

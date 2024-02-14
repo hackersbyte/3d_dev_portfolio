@@ -1,36 +1,75 @@
+import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-
-import { Footer, Navbar } from "./components";
-import { About, Contact, Home, Projects } from "./pages";
+import { Footer, Navbar, StarsCanvas, } from "./components";
+import { About, Contact, Home, Projects, Blog, Testimonials, Works } from "./pages";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
   return (
-    <main className='bg-slate-300/20'>
-      <Router>
+    <main className="bg-slate-300/50 h-[100vh">
+      <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/works" element={<Works />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/blog" element={<Blog />} />
           <Route
-            path='/*'
+            path="/contact/*"
             element={
-              <>
-            <Routes>
-                <Route path="/" element={<Home/> } />
-                <Route path="/about" element={<About/> } />
-                <Route path="/projects" element={<Projects/> } />
-                <Route path="/contact" element={<Contact/> } />
-                </Routes>
-                <Footer />
-              </>
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <>
+                      <Contact />
+                      <StarsCanvas /> {/* Render StarsCanvas alongside Contact */}
+                    </>
+                  }
+                />
+                {/* Other routes within contact */}
+              </Routes>
             }
           />
         </Routes>
-      </Router>
+        
+        <Footer />
+      </BrowserRouter>
     </main>
   );
 };
 
 export default App;
+
+
+
+// App type b
+
+// const App = () => {
+//   return (
+//     <BrowserRouter>
+//       <div className='relative z-0'>
+//         <div className="bg-slate-300/50">
+//           <Navbar />
+//           <Home />
+//         </div>
+//         <About />
+//         <Blog />
+//         <Projects />
+//         <Works />
+//         <Testimonials />
+//         <div className='relative z-0'>
+//           <Contact />
+//           <StarsCanvas />
+//         </div>
+//       </div>
+//     </BrowserRouter>
+//   );
+// }
+
+// export default App;
 
 
 

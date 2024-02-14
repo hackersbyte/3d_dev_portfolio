@@ -33,7 +33,17 @@ import threads from './threads.svg'
 import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
+import instagram from './instagram.svg'
+import twitt from './twitt.svg'
+import facebook from './facebook.svg'
+import thread from './thread.svg'
+import tiktok from './tiktok.svg'
+import youtube from './youtube.svg'
 import soundoff from './soundoff.png'
+import backend from './backend.png'
+import creator from './creator.png'
+import mobile1 from './mobile1.png'
+import web from './web.png'
 
 export {
     aws,
@@ -71,5 +81,16 @@ export {
     arrow,
     contact,
     soundon,
-    soundoff
+    soundoff,
+    instagram,
+    twitt,
+    thread,
+    facebook,
+    tiktok,
+    youtube,
+    mobile1,
+    creator,
+    backend,
+    web,
+
 }

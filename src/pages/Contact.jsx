@@ -1,10 +1,13 @@
-import emailjs from "@emailjs/browser";
+
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState } from "react";
 
+import { client } from './../client';
 import { Fox } from "../models";
 import useAlert from "../hooks/useAlert";
 import { Alert, Loader } from "../components";
+import { images } from './../constants';
+import './Footer.scss';
 
 const Contact = () => {
   const formRef = useRef();
@@ -20,68 +23,81 @@ const Contact = () => {
   const handleFocus = () => setCurrentAnimation("walk");
   const handleBlur = () => setCurrentAnimation("idle");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setCurrentAnimation("hit");
-
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "Alex Mutonga",
-          from_email: form.email,
-          to_email: form.email,
+    
+      try {
+        await client.create({
+          _type: "contact",
+          name: form.name,
+          email: form.email,
           message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          showAlert({
-            show: true,
-            text: "Thank you for your message 😃",
-            type: "success",
-          });
+        });
 
-          setTimeout(() => {
-            hideAlert(false);
-            setCurrentAnimation("idle");
-            setForm({
-              name: "",
-              email: "",
-              message: "",
-            });
-          }, [3000]);
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
+    
+        setLoading(false);
+        showAlert({
+          show: true,
+          text: "Thank you for your message 😃 ",
+          type: "success",
+        });
+    
+        setTimeout(() => {
+          hideAlert(false);
           setCurrentAnimation("idle");
-
-          showAlert({
-            show: true,
-            text: "I didn't receive your message 😢",
-            type: "danger",
+          setForm({
+            name: "",
+            email: "",
+            message: "",
           });
-        }
-      );
-  };
+        }, 3000);
+      } catch (error) {
+        setLoading(false);
+        console.error(error);
+        setCurrentAnimation("idle");
+    
+        showAlert({
+          show: true,
+          text: "I didn't receive your message 😢 ",
+          type: "danger",
+        });
+      }
+    };
 
   return (
-    <section className='relative flex lg:flex-row flex-col max-container'>
+    <section className="max-container ">
+      {alert.show && <Alert {...alert} />}
+      <h1 className='head-text'>Get in <span className="blue-gradient_text font-semibold drop-shadow">
+            {" "}
+            Touch
+            </span>
+            </h1>
+    
+
+    <div className='app__footer-cards'>
+        <div className='app__footer-card'>
+            <img src={images.email} alt="email" />
+            <a href="mailto:biz@alexmutonga.com" className='p-text'> biz@alexmutonga.com</a>
+          </div>
+          <div className='app__footer-card'>
+            <img src={images.mobile} alt="email" />
+            <a href="tel:+254 706 437 582" className='p-text'> +254 706 437 582</a>
+          </div>
+        </div>
+
+      
       {alert.show && <Alert {...alert} />}
 
-      <div className='flex-1 min-w-[50%] flex flex-col'>
-        <h1 className='head-text'>Get in Touch</h1>
+      <div className="relative flex flex-col  lg:flex-row ">
 
+      <div className='flex-1 min-w-[50%] flex flex-col'>
+      
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className='w-full flex flex-col gap-7 mt-14'
+          className='w-full flex flex-col gap-4 mt-15'
         >
           <label className='text-black-500 font-semibold'>
             Name
@@ -141,8 +157,8 @@ const Contact = () => {
         <Canvas
           camera={{
             position: [0, 0, 5],
-            fov: 75,
-            near: 0.1,
+            fov: 85,
+            near: 0.5,
             far: 1000,
           }}
         >
@@ -161,12 +177,16 @@ const Contact = () => {
               currentAnimation={currentAnimation}
               position={[0.5, 0.35, 0]}
               rotation={[12.629, -0.6, 0]}
-              scale={[0.5, 0.5, 0.5]}
+              scale={[0.8, 0.7, 0.7]}
             />
           </Suspense>
         </Canvas>
+
       </div>
+      </div>
+
     </section>
+    
   );
 };
 
