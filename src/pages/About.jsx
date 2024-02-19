@@ -55,12 +55,14 @@ const About = () => {
         </h1>
       </motion.div>
 
+      <div className='mt-5 flex flex-col gap-3 text-slate-500'>
       <motion.p
           variants={fadeInn("", "", 0.1, 1)}
           className='mt-4 text-slate-500 text-[18px] leading-[30px] flex flex-col'
         >
           Software Developer based in Kenya specializing in full-stack applications mainly using python and javascript. With expertise in frameworks like React, Node.js, Three.js, and Django. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!
       </motion.p>
+      </div>
 
       <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index) => (
@@ -88,7 +90,7 @@ const About = () => {
         </div>
       </div>
 
-      <hr className="border-slate-200" />
+      <hr className="border-slate-500" />
 
       <CTA/>
     </>

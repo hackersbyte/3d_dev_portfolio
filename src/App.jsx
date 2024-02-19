@@ -45,31 +45,5 @@ export default App;
 
 
 
-// App type b
-
-// const App = () => {
-//   return (
-//     <BrowserRouter>
-//       <div className='relative z-0'>
-//         <div className="bg-slate-300/50">
-//           <Navbar />
-//           <Home />
-//         </div>
-//         <About />
-//         <Blog />
-//         <Projects />
-//         <Works />
-//         <Testimonials />
-//         <div className='relative z-0'>
-//           <Contact />
-//           <StarsCanvas />
-//         </div>
-//       </div>
-//     </BrowserRouter>
-//   );
-// }
-
-// export default App;
-
 
 

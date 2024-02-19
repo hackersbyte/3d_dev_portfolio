@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {motion } from  "framer-motion";
+import { CTA } from "../components";
 
 import { urlFor, client } from './../client';
 import './Blog.scss';
@@ -103,6 +104,11 @@ const Blog = () => {
         ))}
 
       </motion.div>
+
+      <hr className="border-slate-500" />
+
+      <CTA/>
+
       </section>
   );
 };
