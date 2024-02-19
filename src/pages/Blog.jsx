@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {motion } from  "framer-motion";
 import { CTA } from "../components";
+import { SectionWrapper, } from "../hoc";
+import { fadeInn, textVariants, slideIn} from "../utils/motion";
 
 import { urlFor, client } from './../client';
 import './Blog.scss';
@@ -37,10 +39,13 @@ const Blog = () => {
 
 
   return (
-    <section className="max-container" >
-      <h2 className='head-text'> Our Most <span>Popular Blogs</span> Section </h2>
+    < >
+      <motion.h2 className='head-text'
+        variants={textVariants()}> 
+        Our Most <span  className="blue-gradient_text font-semibold drop-shadow">Popular Blogs</span> Section </motion.h2>
 
-      <div className='app__blog-filter'>
+      <motion.div className='app__blog-filter'
+        variants={fadeInn("right", "spring", 0.5, 0.75)}>
         {['Coding', 'Python', 'Javascript', 'React JS', 'Tech News', 'All'].map((item, index) => (
           <div
             key={index}
@@ -51,11 +56,10 @@ const Blog = () => {
           </div>
         ))}
 
-      </div>
+      </motion.div>
       
       <motion.div 
-       animate={animateCard}
-       transition={{ duration: 0.5 , delayChildren : 0.5}}
+      variants={slideIn("right", "spring", 0.5, 0.75)}
        className="app__blog-portfolio"
       >
         { filterBlog.map((blog, index) => (
@@ -109,10 +113,10 @@ const Blog = () => {
 
       <CTA/>
 
-      </section>
+      </>
   );
 };
 
-export default Blog;
+export default SectionWrapper (Blog, "blog");
 
 

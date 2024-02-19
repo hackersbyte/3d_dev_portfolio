@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 import { fadeInn, textVariants, } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 
-const ServiceCard = ({ index, title, icon }) => {
 
-  return (
-  <Tilt className='xs:w-[250px] w-full'>
-    <motion.div
+const ServiceCard = ({ index, title, icon }) => (
+    <div
       variants={fadeInn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+      className='w-full green-pink-gradient p-[px] rounded-[20px] shadow-card justify-center xs:w-[250px] '
     >
+      <Tilt className='xs:w-[250px] w-full '>
+
       <div
         options={{
           max: 45,
@@ -32,17 +32,15 @@ const ServiceCard = ({ index, title, icon }) => {
           {title}
         </h3>
       </div>
-      </motion.div>
-  </Tilt>
-  );
-};
+      </Tilt>
+    </div>
+);
 
 const About = () => {
   return (
     <>
-
-      <motion.div 
-      variants={textVariants()}
+      
+      <div 
       className='flex flex-col'
       >
         <h1 className="head-text flex-col">
@@ -53,15 +51,18 @@ const About = () => {
           </span>{" "}
           👋
         </h1>
-      </motion.div>
-
+      </div>
+     
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
-      <motion.p
+      <p
           variants={fadeInn("", "", 0.1, 1)}
           className='mt-4 text-slate-500 text-[18px] leading-[30px] flex flex-col'
         >
-          Software Developer based in Kenya specializing in full-stack applications mainly using python and javascript. With expertise in frameworks like React, Node.js, Three.js, and Django. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!
-      </motion.p>
+          Software Developer based in Kenya specializing in full-stack applications mainly using python 
+          and javascript. With expertise in frameworks like React, Node.js, Three.js, and Django. 
+          I'm a quick learner and collaborate closely with clients to create efficient, scalable, 
+          and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!
+      </p>
       </div>
 
       <div className='mt-20 flex flex-wrap gap-10'>

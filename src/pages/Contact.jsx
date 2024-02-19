@@ -76,7 +76,7 @@ const Contact = () => {
             </h1>
     
 
-    <div className='app__footer-cards'>
+    <div className='app__footer-cards '>
         <div className='app__footer-card'>
             <img src={images.email} alt="email" />
             <a href="mailto:biz@alexmutonga.com" className='p-text'> biz@alexmutonga.com</a>

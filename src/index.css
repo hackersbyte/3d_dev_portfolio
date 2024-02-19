@@ -5,6 +5,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 :root {
   --blue-rgb: 237 245 255;
   --green-rgb: 125 161 35;
@@ -36,7 +38,6 @@ body:has(.card[data-color="green"]:hover) {
 
   .head-text {
     @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
-    /* margin-left: 50px; */
   }
 
   .subhead-text {
@@ -86,6 +87,12 @@ body:has(.card[data-color="green"]:hover) {
   .cta-text {
     @apply text-black-500 font-extrabold flex-1 text-3xl max-md:text-center;
   }
+}
+
+.hash-span {
+  margin-top: -100px;
+  padding-bottom: 100px;
+  display: block;
 }
 
 .glassmorphism {
@@ -231,7 +238,12 @@ body:has(.card[data-color="green"]:hover) {
   background: "#00cea8";
   background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
   background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  margin-left: 50px;
+}
+
+.shadow-card {
+  --tw-shadow: 0px 35px 120px -15px #6a6779;
+  --tw-shadow-colored: 0px 35px 120px -15px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #d5b8b800), var(--tw-ring-shadow, 0 0 #f0d2d200), var(--tw-shadow);
 }
 .bg-tertiary {
   --tw-bg-opacity: 1;
